@@ -1,0 +1,66 @@
+PODS:
+  - Alamofire (4.8.0)
+  - Differentiator (3.1.0)
+  - Moya/Core (11.0.2):
+    - Alamofire (~> 4.1)
+    - Result (~> 3.0)
+  - Moya/RxSwift (11.0.2):
+    - Moya/Core
+    - RxSwift (~> 4.0)
+  - Result (3.2.4)
+  - RxAlertController (4.0.0):
+    - RxSwift (~> 4.3.1)
+  - RxAtomic (4.4.0)
+  - RxBlocking (4.4.0):
+    - RxAtomic (~> 4.4)
+    - RxSwift (~> 4.0)
+  - RxCocoa (4.3.1):
+    - RxSwift (~> 4.0)
+  - RxDataSources (3.1.0):
+    - Differentiator (~> 3.0)
+    - RxCocoa (~> 4.0)
+    - RxSwift (~> 4.0)
+  - RxFlow (1.6.2):
+    - RxCocoa (>= 4.3.0)
+    - RxSwift (>= 4.3.0)
+  - RxSwift (4.3.1)
+
+DEPENDENCIES:
+  - Moya/RxSwift (~> 11.0.2)
+  - RxAlertController (~> 4.0)
+  - RxBlocking (~> 4.0)
+  - RxCocoa (~> 4.3.1)
+  - RxDataSources (~> 3.1.0)
+  - RxFlow (~> 1.6.2)
+  - RxSwift (~> 4.3.1)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Alamofire
+    - Differentiator
+    - Moya
+    - Result
+    - RxAlertController
+    - RxAtomic
+    - RxBlocking
+    - RxCocoa
+    - RxDataSources
+    - RxFlow
+    - RxSwift
+
+SPEC CHECKSUMS:
+  Alamofire: 3ec537f71edc9804815215393ae2b1a8ea33a844
+  Differentiator: be49ca3408f0ecfc761e4c7763d20c62be01b9ad
+  Moya: a725035953bc1c0eb1be505ab903984501d82440
+  Result: d2d07204ce72856f1fd9130bbe42c35a7b0fea10
+  RxAlertController: 3306c07f3d2f150b0b3d5d196669a6f34c6df552
+  RxAtomic: eacf60db868c96bfd63320e28619fe29c179656f
+  RxBlocking: 138ad53217434444d6eeeb4fb406a45431d92e31
+  RxCocoa: 78763c7b07d02455598d9fc3c1ad091a28b73635
+  RxDataSources: a843bad90c29817f5923ec8163f4af2de084ceb3
+  RxFlow: 2460b8f1d546a7536d3b259536357301030a4140
+  RxSwift: fe0fd770a43acdb7d0a53da411c9b892e69bb6e4
+
+PODFILE CHECKSUM: efba2f2ca7ce4bac1fd2bdc6d4e3d77b55df3d8a
+
+COCOAPODS: 1.5.3
