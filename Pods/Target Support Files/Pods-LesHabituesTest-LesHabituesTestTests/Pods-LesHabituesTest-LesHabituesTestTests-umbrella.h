@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double Pods_LesHabituesTest_LesHabituesTestUITestsVersionNumber;
-FOUNDATION_EXPORT const unsigned char Pods_LesHabituesTest_LesHabituesTestUITestsVersionString[];
+FOUNDATION_EXPORT double Pods_LesHabituesTest_LesHabituesTestTestsVersionNumber;
+FOUNDATION_EXPORT const unsigned char Pods_LesHabituesTest_LesHabituesTestTestsVersionString[];
 

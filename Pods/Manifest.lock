@@ -24,15 +24,19 @@ PODS:
     - RxCocoa (>= 4.3.0)
     - RxSwift (>= 4.3.0)
   - RxSwift (4.3.1)
+  - RxTest (4.4.0):
+    - RxAtomic (~> 4.4)
+    - RxSwift (~> 4.0)
 
 DEPENDENCIES:
   - Moya/RxSwift (~> 11.0.2)
   - RxAlertController (~> 4.0)
-  - RxBlocking (~> 4.0)
+  - RxBlocking (~> 4.4.0)
   - RxCocoa (~> 4.3.1)
   - RxDataSources (~> 3.1.0)
   - RxFlow (~> 1.6.2)
   - RxSwift (~> 4.3.1)
+  - RxTest (~> 4.4.0)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -47,6 +51,7 @@ SPEC REPOS:
     - RxDataSources
     - RxFlow
     - RxSwift
+    - RxTest
 
 SPEC CHECKSUMS:
   Alamofire: 3ec537f71edc9804815215393ae2b1a8ea33a844
@@ -60,7 +65,8 @@ SPEC CHECKSUMS:
   RxDataSources: a843bad90c29817f5923ec8163f4af2de084ceb3
   RxFlow: 2460b8f1d546a7536d3b259536357301030a4140
   RxSwift: fe0fd770a43acdb7d0a53da411c9b892e69bb6e4
+  RxTest: 19d03286bdc0a3aaea5d61d4cde31fdf4bb8a5ba
 
-PODFILE CHECKSUM: efba2f2ca7ce4bac1fd2bdc6d4e3d77b55df3d8a
+PODFILE CHECKSUM: 133b1139f7084bcb6674e6414168c5f20c2e9469
 
 COCOAPODS: 1.5.3

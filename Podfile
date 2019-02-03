@@ -14,8 +14,9 @@ target 'LesHabituesTest' do
     #Networking
     pod 'Moya/RxSwift', '~> 11.0.2'
 
-    target 'LesHabituesTestUITests' do
-        pod 'RxBlocking', '~> 4.0'
+    target 'LesHabituesTestTests' do
+        pod 'RxBlocking', '~> 4.4.0'
+        pod 'RxTest', '~> 4.4.0'
     end
 end
 
