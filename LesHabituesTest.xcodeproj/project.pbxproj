@@ -23,6 +23,8 @@
 		0550BE922207554200F1622E /* ShopCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0550BE902207554200F1622E /* ShopCell.xib */; };
 		0550BE9A220758B600F1622E /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0550BE99220758B600F1622E /* Fonts.swift */; };
 		0550BE9C22076F2600F1622E /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0550BE9B22076F2600F1622E /* Colors.swift */; };
+		0550BEB122084F9100F1622E /* AppFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0550BEB022084F9100F1622E /* AppFlow.swift */; };
+		0550BEB42208509500F1622E /* Steps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0550BEB32208509500F1622E /* Steps.swift */; };
 		90A72FA8B908DB0983C5EBEC /* Pods_LesHabituesTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97A87749D57F2A01BBDBE834 /* Pods_LesHabituesTest.framework */; };
 		CB410CAD6059F0C14FBFCE86 /* Pods_LesHabituesTest_LesHabituesTestTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4E05F7A6956A97406E67C4D /* Pods_LesHabituesTest_LesHabituesTestTests.framework */; };
 /* End PBXBuildFile section */
@@ -59,6 +61,8 @@
 		0550BE97220757FA00F1622E /* Lato-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Regular.ttf"; sourceTree = "<group>"; };
 		0550BE99220758B600F1622E /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		0550BE9B22076F2600F1622E /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		0550BEB022084F9100F1622E /* AppFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFlow.swift; sourceTree = "<group>"; };
+		0550BEB32208509500F1622E /* Steps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Steps.swift; sourceTree = "<group>"; };
 		4D1E5734B6E9B002E58687B7 /* Pods-LesHabituesTest-LesHabituesTestTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LesHabituesTest-LesHabituesTestTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LesHabituesTest-LesHabituesTestTests/Pods-LesHabituesTest-LesHabituesTestTests.debug.xcconfig"; sourceTree = "<group>"; };
 		57794600FEA1C214D263CA1A /* Pods_LesHabituesTest_LesHabituesTestUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LesHabituesTest_LesHabituesTestUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7766564BD91C36B5F2C172AF /* Pods-LesHabituesTest-LesHabituesTestUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LesHabituesTest-LesHabituesTestUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LesHabituesTest-LesHabituesTestUITests/Pods-LesHabituesTest-LesHabituesTestUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -113,6 +117,7 @@
 		0525281922071F5A00128C9C /* LesHabituesTest */ = {
 			isa = PBXGroup;
 			children = (
+				0550BEAE22084F7E00F1622E /* Navigation */,
 				0550BE98220758A200F1622E /* Helpers */,
 				0525283D2207230600128C9C /* Services */,
 				0525283C220722FF00128C9C /* Models */,
@@ -237,6 +242,31 @@
 				0550BE99220758B600F1622E /* Fonts.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		0550BEAE22084F7E00F1622E /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				0550BEB22208508900F1622E /* Steps */,
+				0550BEAF22084F8400F1622E /* Flows */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
+		0550BEAF22084F8400F1622E /* Flows */ = {
+			isa = PBXGroup;
+			children = (
+				0550BEB022084F9100F1622E /* AppFlow.swift */,
+			);
+			path = Flows;
+			sourceTree = "<group>";
+		};
+		0550BEB22208508900F1622E /* Steps */ = {
+			isa = PBXGroup;
+			children = (
+				0550BEB32208509500F1622E /* Steps.swift */,
+			);
+			path = Steps;
 			sourceTree = "<group>";
 		};
 		9BFCFAE062A4AB392BA25379 /* Pods */ = {
@@ -489,12 +519,14 @@
 				0550BE9C22076F2600F1622E /* Colors.swift in Sources */,
 				052528412207263E00128C9C /* Shop.swift in Sources */,
 				0525284822072AD200128C9C /* APIConfig.swift in Sources */,
+				0550BEB42208509500F1622E /* Steps.swift in Sources */,
 				0550BE912207554200F1622E /* ShopCell.swift in Sources */,
 				05252846220729D300128C9C /* ShopService.swift in Sources */,
 				0525281D22071F5A00128C9C /* ViewController.swift in Sources */,
 				0525281B22071F5A00128C9C /* AppDelegate.swift in Sources */,
 				0550BE9A220758B600F1622E /* Fonts.swift in Sources */,
 				0525284A22072B3100128C9C /* ShopDataController.swift in Sources */,
+				0550BEB122084F9100F1622E /* AppFlow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
