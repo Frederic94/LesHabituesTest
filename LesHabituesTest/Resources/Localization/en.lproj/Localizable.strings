@@ -1,0 +1,9 @@
+/* 
+  Localizable.strings
+  LesHabituesTest
+
+  Created by Frederic Mallet on 04/02/2019.
+  Copyright © 2019 Frederic Mallet. All rights reserved.
+*/
+
+"shop_list_max_offer" = "up to %@ offered";

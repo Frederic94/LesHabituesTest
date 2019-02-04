@@ -19,7 +19,7 @@ final class ShopListViewController: UIViewController {
             tableView.estimatedRowHeight = 100
             tableView.rowHeight = UITableView.automaticDimension
             tableView.estimatedSectionHeaderHeight = UITableView.automaticDimension
-            tableView.register(cellWithClass: ShopCell.self)
+            tableView.register(nibWithCellClass: ShopCell.self)
             tableView.rx.setDelegate(self).disposed(by: disposeBag)
         }
     }
@@ -35,8 +35,6 @@ final class ShopListViewController: UIViewController {
         return UIStoryboard.shop.viewController(type: ShopListViewController.self)
     }
 
-
-
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
@@ -48,6 +46,7 @@ final class ShopListViewController: UIViewController {
 private extension ShopListViewController {
     func setup() {
         setupDataSource()
+        bindViewModel()
     }
 
     func setupDataSource() {
@@ -61,8 +60,18 @@ private extension ShopListViewController {
     }
 
     func cellShop(tableView: UITableView, indexPath: IndexPath, shop: ShopViewModel) -> UITableViewCell {
+        var shop = shop
         let cell = tableView.dequeueReusableCell(withClass: ShopCell.self, for: indexPath)
+        cell.configure(logo: shop.logo, name: shop.name,
+                       adress: shop.address, offer: shop.maxOffer)
         return cell
+    }
+
+    func bindViewModel() {
+        viewModel.output.sections
+            .bind(to: tableView.rx.items(dataSource: dataSource))
+            .disposed(by: disposeBag)
+
     }
 }
 

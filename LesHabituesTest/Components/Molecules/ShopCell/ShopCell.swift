@@ -8,19 +8,20 @@
 
 import UIKit
 
-class ShopCell: UITableViewCell {
+class ShopCell: UITableViewCell, Nibable {
     @IBOutlet weak var logoImageView: UIImageView!
 
     @IBOutlet weak var nameLabel: UILabel! {
         didSet {
             nameLabel.font = FontFamily.Lato.regular.font(size: 14.0)
-            nameLabel.textColor = UIColor.cornflowerBlue
+            nameLabel.textColor = UIColor.silver
         }
     }
     @IBOutlet weak var adressLabel: UILabel! {
         didSet {
+            adressLabel.numberOfLines = 0
             adressLabel.font = FontFamily.Lato.regular.font(size: 14.0)
-            adressLabel.textColor = UIColor.cornflowerBlue
+            adressLabel.textColor = UIColor.silver
         }
     }
 
@@ -36,8 +37,13 @@ class ShopCell: UITableViewCell {
         // Initialization code
     }
 
-    public func configure(logo: UIImage, name: String, adress: String, offer: String) {
-        logoImageView.image = logo
+    public func configure(logo: URL?, name: String, adress: String, offer: String) {
+        if let url = logo {
+            logoImageView.download(from: url)
+        } else {
+            // TODO: add Placeholder
+        }
+
         nameLabel.text = name
         adressLabel.text = adress
         offerLabel.text = offer
