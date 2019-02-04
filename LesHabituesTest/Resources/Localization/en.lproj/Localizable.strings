@@ -7,3 +7,6 @@
 */
 
 "shop_list_max_offer" = "up to %@ offered";
+"alert_failure_description" = "An error has occurred";
+"alert_failure_title" = "Error";
+"alert_failure_button" = "Try again";

@@ -17,6 +17,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="hLv-Sb-HZ3">
+                                <rect key="frame" x="177.5" y="323.5" width="20" height="20"/>
+                            </activityIndicatorView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Bu8-te-JXC">
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -26,12 +29,15 @@
                         <constraints>
                             <constraint firstItem="Bu8-te-JXC" firstAttribute="leading" secondItem="R0X-38-j2F" secondAttribute="leading" id="ARf-EE-cN4"/>
                             <constraint firstItem="Bu8-te-JXC" firstAttribute="top" secondItem="R0X-38-j2F" secondAttribute="top" id="HDZ-f7-Tl1"/>
+                            <constraint firstItem="hLv-Sb-HZ3" firstAttribute="centerY" secondItem="zv0-rs-Y6o" secondAttribute="centerY" id="Nk3-uh-O6L"/>
                             <constraint firstItem="R0X-38-j2F" firstAttribute="trailing" secondItem="Bu8-te-JXC" secondAttribute="trailing" id="R3c-GF-piu"/>
+                            <constraint firstItem="hLv-Sb-HZ3" firstAttribute="centerX" secondItem="zv0-rs-Y6o" secondAttribute="centerX" id="dVr-Ev-v8d"/>
                             <constraint firstItem="R0X-38-j2F" firstAttribute="bottom" secondItem="Bu8-te-JXC" secondAttribute="bottom" id="vDu-Bw-WUk"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="R0X-38-j2F"/>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="hLv-Sb-HZ3" id="G37-pl-mKc"/>
                         <outlet property="tableView" destination="Bu8-te-JXC" id="CR3-4J-WPD"/>
                     </connections>
                 </viewController>

@@ -7,3 +7,6 @@
 */
 
 "shop_list_max_offer" = "Jusqu'a %@ offert";
+"alert_failure_description" = "Une erreur est survenue.";
+"alert_failure_title" = "Error";
+"alert_failure_button" = "Réessayer";

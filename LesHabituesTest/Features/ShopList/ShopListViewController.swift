@@ -8,8 +8,10 @@
 
 import UIKit
 import RxSwift
+import RxCocoa
 import RxDataSources
 import SwifterSwift
+import RxAlertController
 
 final class ShopListViewController: UIViewController {
 
@@ -23,6 +25,8 @@ final class ShopListViewController: UIViewController {
             tableView.rx.setDelegate(self).disposed(by: disposeBag)
         }
     }
+    
+    @IBOutlet private weak var activityIndicator: UIActivityIndicatorView!
 
     // MARK: Injected
     var viewModel: ShopListViewModel!
@@ -72,6 +76,37 @@ private extension ShopListViewController {
             .bind(to: tableView.rx.items(dataSource: dataSource))
             .disposed(by: disposeBag)
 
+        viewModel.output.state
+            .map { $0 == .loading  }
+            .drive(tableView.rx.isHidden)
+            .disposed(by: disposeBag)
+
+        viewModel.output.state
+            .map { $0 != .loading }
+            .drive(activityIndicator.rx.isHidden)
+            .disposed(by: disposeBag)
+
+        viewModel.output.state
+            .map { $0 == .loading }
+            .drive(activityIndicator.rx.isAnimating)
+            .disposed(by: disposeBag)
+
+
+        viewModel.output.state
+            .filter { $0 == .error }
+            .asObservable()
+            .flatMap { [weak self] _ -> Single<Int> in
+                guard let self = self else { return .never() }
+                let title = NSLocalizedString("alert_failure_title", comment: "")
+                let message = NSLocalizedString("alert_failure_description", comment: "")
+                let buttonTitle = NSLocalizedString("alert_failure_button", comment: "")
+                return UIAlertController.rx
+                    .show(in: self, title: title,
+                          message: message,
+                          buttons: [.default(buttonTitle)])
+            }.map { _ in () }
+            .bind(to: viewModel.input.refresh)
+            .disposed(by: disposeBag)
     }
 }
 

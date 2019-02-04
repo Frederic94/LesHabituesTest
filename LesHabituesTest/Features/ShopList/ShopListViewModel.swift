@@ -8,24 +8,33 @@
 
 import Foundation
 import RxSwift
+import RxCocoa
 import RxDataSources
 import RxFlow
 
 final class ShopListViewModel: ViewModelType, Stepper {
     typealias ShopSectionModel = SectionModel<String, ShopViewModel>
 
+    enum State {
+        case loading
+        case loaded
+        case error
+    }
 
     struct Input {
-
+        var refresh: AnyObserver<Void>
     }
 
     struct Output {
         var sections: Observable<[ShopSectionModel]>
+        var state: Driver<State>
     }
 
     // MARK: Private
     private let dataController: ShopDataController!
     private let sectionsSubject = ReplaySubject<[ShopSectionModel]>.create(bufferSize: 1)
+    private let stateSubject = BehaviorSubject<State>(value: .loading)
+    private let refreshSubject = PublishSubject<Void>()
 
     // MARK: Public
     let input: Input
@@ -33,8 +42,9 @@ final class ShopListViewModel: ViewModelType, Stepper {
 
     init() {
         self.dataController = ShopDataController()
-        self.input = Input()
-        self.output = Output(sections: sectionsSubject.asObservable())
+        self.input = Input(refresh: refreshSubject.asObserver())
+        self.output = Output(sections: sectionsSubject.asObservable(),
+                             state: stateSubject.asDriver(onErrorJustReturn: .error))
 
         setup()
     }
@@ -44,6 +54,7 @@ final class ShopListViewModel: ViewModelType, Stepper {
 private extension ShopListViewModel {
     func setup() {
         callWs()
+        setupRefresh()
     }
 
     func callWs() {
@@ -65,5 +76,24 @@ private extension ShopListViewModel {
                 return [ShopSectionModel(model: "", items: vms)]
             }.bind(to: sectionsSubject)
             .disposed(by: disposeBag)
+
+        responseShare
+            .flatMap { result -> Single<State> in
+                switch result {
+                case .success:
+                    return .just(State.loaded)
+                case .failure:
+                    return .just(State.error)
+                }
+            }.bind(to: stateSubject)
+            .disposed(by: disposeBag)
+    }
+
+    func setupRefresh() {
+        refreshSubject
+            .subscribe(onNext: { [weak self] _ in
+            guard let self = self else { return }
+            self.callWs()
+        }).disposed(by: disposeBag)
     }
 }
