@@ -19,6 +19,10 @@
 		0525284A22072B3100128C9C /* ShopDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0525284922072B3100128C9C /* ShopDataController.swift */; };
 		0550BE8422074E6900F1622E /* LesHabituesTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0550BE8322074E6900F1622E /* LesHabituesTestTests.swift */; };
 		0550BE8B22074FA300F1622E /* ShopDataControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0525284C22072EA100128C9C /* ShopDataControllerTests.swift */; };
+		0550BE912207554200F1622E /* ShopCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0550BE8F2207554200F1622E /* ShopCell.swift */; };
+		0550BE922207554200F1622E /* ShopCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0550BE902207554200F1622E /* ShopCell.xib */; };
+		0550BE9A220758B600F1622E /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0550BE99220758B600F1622E /* Fonts.swift */; };
+		0550BE9C22076F2600F1622E /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0550BE9B22076F2600F1622E /* Colors.swift */; };
 		90A72FA8B908DB0983C5EBEC /* Pods_LesHabituesTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97A87749D57F2A01BBDBE834 /* Pods_LesHabituesTest.framework */; };
 		CB410CAD6059F0C14FBFCE86 /* Pods_LesHabituesTest_LesHabituesTestTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4E05F7A6956A97406E67C4D /* Pods_LesHabituesTest_LesHabituesTestTests.framework */; };
 /* End PBXBuildFile section */
@@ -50,6 +54,11 @@
 		0550BE8122074E6900F1622E /* LesHabituesTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LesHabituesTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0550BE8322074E6900F1622E /* LesHabituesTestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LesHabituesTestTests.swift; sourceTree = "<group>"; };
 		0550BE8522074E6900F1622E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0550BE8F2207554200F1622E /* ShopCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopCell.swift; sourceTree = "<group>"; };
+		0550BE902207554200F1622E /* ShopCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShopCell.xib; sourceTree = "<group>"; };
+		0550BE97220757FA00F1622E /* Lato-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Regular.ttf"; sourceTree = "<group>"; };
+		0550BE99220758B600F1622E /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
+		0550BE9B22076F2600F1622E /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		4D1E5734B6E9B002E58687B7 /* Pods-LesHabituesTest-LesHabituesTestTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LesHabituesTest-LesHabituesTestTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LesHabituesTest-LesHabituesTestTests/Pods-LesHabituesTest-LesHabituesTestTests.debug.xcconfig"; sourceTree = "<group>"; };
 		57794600FEA1C214D263CA1A /* Pods_LesHabituesTest_LesHabituesTestUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LesHabituesTest_LesHabituesTestUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7766564BD91C36B5F2C172AF /* Pods-LesHabituesTest-LesHabituesTestUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LesHabituesTest-LesHabituesTestUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LesHabituesTest-LesHabituesTestUITests/Pods-LesHabituesTest-LesHabituesTestUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -104,10 +113,12 @@
 		0525281922071F5A00128C9C /* LesHabituesTest */ = {
 			isa = PBXGroup;
 			children = (
+				0550BE98220758A200F1622E /* Helpers */,
 				0525283D2207230600128C9C /* Services */,
 				0525283C220722FF00128C9C /* Models */,
 				0525283B2207228000128C9C /* Components */,
 				0525283A2207225A00128C9C /* Features */,
+				0550BE93220757C600F1622E /* Resources */,
 				0525281A22071F5A00128C9C /* AppDelegate.swift */,
 				0525281C22071F5A00128C9C /* ViewController.swift */,
 				0525281E22071F5B00128C9C /* Main.storyboard */,
@@ -128,6 +139,8 @@
 		0525283B2207228000128C9C /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				0550BE8D2207550700F1622E /* Molecules */,
+				0550BE8C220754FB00F1622E /* Atoms */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -175,6 +188,55 @@
 				0550BE8522074E6900F1622E /* Info.plist */,
 			);
 			path = LesHabituesTestTests;
+			sourceTree = "<group>";
+		};
+		0550BE8C220754FB00F1622E /* Atoms */ = {
+			isa = PBXGroup;
+			children = (
+				0550BE9B22076F2600F1622E /* Colors.swift */,
+			);
+			path = Atoms;
+			sourceTree = "<group>";
+		};
+		0550BE8D2207550700F1622E /* Molecules */ = {
+			isa = PBXGroup;
+			children = (
+				0550BE8E2207551C00F1622E /* ShopCell */,
+			);
+			path = Molecules;
+			sourceTree = "<group>";
+		};
+		0550BE8E2207551C00F1622E /* ShopCell */ = {
+			isa = PBXGroup;
+			children = (
+				0550BE8F2207554200F1622E /* ShopCell.swift */,
+				0550BE902207554200F1622E /* ShopCell.xib */,
+			);
+			path = ShopCell;
+			sourceTree = "<group>";
+		};
+		0550BE93220757C600F1622E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				0550BE94220757D100F1622E /* Font */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		0550BE94220757D100F1622E /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				0550BE97220757FA00F1622E /* Lato-Regular.ttf */,
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
+		0550BE98220758A200F1622E /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				0550BE99220758B600F1622E /* Fonts.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		9BFCFAE062A4AB392BA25379 /* Pods */ = {
@@ -288,6 +350,7 @@
 				0525282522071F5D00128C9C /* LaunchScreen.storyboard in Resources */,
 				0525282222071F5D00128C9C /* Assets.xcassets in Resources */,
 				0525282022071F5B00128C9C /* Main.storyboard in Resources */,
+				0550BE922207554200F1622E /* ShopCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -335,6 +398,7 @@
 				"${BUILT_PRODUCTS_DIR}/RxDataSources/RxDataSources.framework",
 				"${BUILT_PRODUCTS_DIR}/RxFlow/RxFlow.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SwifterSwift/SwifterSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/RxAtomic/RxAtomic.framework",
 				"${BUILT_PRODUCTS_DIR}/RxBlocking/RxBlocking.framework",
 				"${BUILT_PRODUCTS_DIR}/RxTest/RxTest.framework",
@@ -350,6 +414,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxDataSources.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxFlow.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwifterSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAtomic.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxBlocking.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxTest.framework",
@@ -393,6 +458,7 @@
 				"${BUILT_PRODUCTS_DIR}/RxDataSources/RxDataSources.framework",
 				"${BUILT_PRODUCTS_DIR}/RxFlow/RxFlow.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SwifterSwift/SwifterSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -405,6 +471,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxDataSources.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxFlow.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwifterSwift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -419,11 +486,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				052528432207292300128C9C /* Provider.swift in Sources */,
+				0550BE9C22076F2600F1622E /* Colors.swift in Sources */,
 				052528412207263E00128C9C /* Shop.swift in Sources */,
 				0525284822072AD200128C9C /* APIConfig.swift in Sources */,
+				0550BE912207554200F1622E /* ShopCell.swift in Sources */,
 				05252846220729D300128C9C /* ShopService.swift in Sources */,
 				0525281D22071F5A00128C9C /* ViewController.swift in Sources */,
 				0525281B22071F5A00128C9C /* AppDelegate.swift in Sources */,
+				0550BE9A220758B600F1622E /* Fonts.swift in Sources */,
 				0525284A22072B3100128C9C /* ShopDataController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

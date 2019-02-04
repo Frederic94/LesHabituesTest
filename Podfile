@@ -7,6 +7,8 @@ pod 'RxCocoa', '~> 4.3.1'
 pod 'RxDataSources', '~> 3.1.0'
 
 target 'LesHabituesTest' do
+    pod 'SwifterSwift' 
+
     # navigation
     pod 'RxFlow', '~> 1.6.2'
     pod 'RxAlertController', '~> 4.0'

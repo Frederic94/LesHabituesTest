@@ -27,6 +27,23 @@ PODS:
   - RxTest (4.4.0):
     - RxAtomic (~> 4.4)
     - RxSwift (~> 4.0)
+  - SwifterSwift (4.6.0):
+    - SwifterSwift/AppKit (= 4.6.0)
+    - SwifterSwift/CoreGraphics (= 4.6.0)
+    - SwifterSwift/CoreLocation (= 4.6.0)
+    - SwifterSwift/Foundation (= 4.6.0)
+    - SwifterSwift/MapKit (= 4.6.0)
+    - SwifterSwift/SpriteKit (= 4.6.0)
+    - SwifterSwift/SwiftStdlib (= 4.6.0)
+    - SwifterSwift/UIKit (= 4.6.0)
+  - SwifterSwift/AppKit (4.6.0)
+  - SwifterSwift/CoreGraphics (4.6.0)
+  - SwifterSwift/CoreLocation (4.6.0)
+  - SwifterSwift/Foundation (4.6.0)
+  - SwifterSwift/MapKit (4.6.0)
+  - SwifterSwift/SpriteKit (4.6.0)
+  - SwifterSwift/SwiftStdlib (4.6.0)
+  - SwifterSwift/UIKit (4.6.0)
 
 DEPENDENCIES:
   - Moya/RxSwift (~> 11.0.2)
@@ -37,6 +54,7 @@ DEPENDENCIES:
   - RxFlow (~> 1.6.2)
   - RxSwift (~> 4.3.1)
   - RxTest (~> 4.4.0)
+  - SwifterSwift
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -52,6 +70,7 @@ SPEC REPOS:
     - RxFlow
     - RxSwift
     - RxTest
+    - SwifterSwift
 
 SPEC CHECKSUMS:
   Alamofire: 3ec537f71edc9804815215393ae2b1a8ea33a844
@@ -66,7 +85,8 @@ SPEC CHECKSUMS:
   RxFlow: 2460b8f1d546a7536d3b259536357301030a4140
   RxSwift: fe0fd770a43acdb7d0a53da411c9b892e69bb6e4
   RxTest: 19d03286bdc0a3aaea5d61d4cde31fdf4bb8a5ba
+  SwifterSwift: 812ffec6f301922f5430e75be3f2939ea3a80024
 
-PODFILE CHECKSUM: 133b1139f7084bcb6674e6414168c5f20c2e9469
+PODFILE CHECKSUM: 5c006e1c1705ab1fc43f2d48b7be6f6c37a6d5d2
 
 COCOAPODS: 1.5.3
