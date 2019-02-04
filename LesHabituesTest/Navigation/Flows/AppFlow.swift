@@ -28,12 +28,14 @@ final class AppFlow: Flow {
         switch step {
         case .shopList:
             return navigateToShopList()
-        default:
-            return NextFlowItems.none
         }
     }
 
     private func navigateToShopList() -> NextFlowItems {
-        return .none
+        let flow = ShopFlow()
+        Flows.whenReady(flow1: flow) {[rootWindow] root in
+            rootWindow.rootViewController = root
+        }
+        return NextFlowItems.one(flowItem: NextFlowItem(nextPresentable: flow, nextStepper: OneStepper(withSingleStep: AppStep.shopList)))
     }
 }
