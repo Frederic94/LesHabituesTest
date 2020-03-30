@@ -41,4 +41,9 @@ class ShopCell: UITableViewCell, Nibable {
         adressLabel.text = category
     }
     
+    public func configure(name: String, adress: String) {
+        nameLabel.text = name
+        adressLabel.text = adress
+    }
+    
 }

@@ -12,15 +12,6 @@ import UIKit
 struct SignShopModel {
     private let shop: SignShopResponse
 
-    private lazy var formatter: NumberFormatter = {
-        let formatter = NumberFormatter()
-        formatter.numberStyle = .currency
-        formatter.maximumFractionDigits = 2
-        formatter.minimumFractionDigits = 2
-        return formatter
-    }()
-
-
     lazy var logo: URL? = {
         return URL(string: shop.logo)
     }()
@@ -34,6 +25,28 @@ struct SignShopModel {
     }()
 
     init(shop: SignShopResponse) {
+        self.shop = shop
+    }
+    
+    func getResponse() -> SignShopResponse {
+        return shop
+    }
+}
+
+
+struct ShopModel {
+    private let shop: ShopResponse
+
+    lazy var name: String = {
+        return shop.name.uppercased()
+    }()
+
+    lazy var adress: String = {
+        return "\(shop.address)\n\(shop.zipcode) \(shop.city)"
+
+    }()
+
+    init(shop: ShopResponse) {
         self.shop = shop
     }
 }

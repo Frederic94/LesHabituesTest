@@ -23,6 +23,7 @@ final class ShopListViewModel: ViewModelType, Stepper {
 
     struct Input {
         var refresh: AnyObserver<Void>
+        var selected: AnyObserver<SignShopModel>
     }
 
     struct Output {
@@ -35,14 +36,16 @@ final class ShopListViewModel: ViewModelType, Stepper {
     private let sectionsSubject = ReplaySubject<[ShopSectionModel]>.create(bufferSize: 1)
     private let stateSubject = BehaviorSubject<State>(value: .loading)
     private let refreshSubject = PublishSubject<Void>()
+    private let selectedSubject = PublishSubject<SignShopModel>()
 
     // MARK: Public
     let input: Input
     let output: Output
 
-    init() {
-        self.dataController = ShopDataController()
-        self.input = Input(refresh: refreshSubject.asObserver())
+    init(dataController: ShopDataController) {
+        self.dataController = dataController
+        self.input = Input(refresh: refreshSubject.asObserver(),
+                           selected: selectedSubject.asObserver())
         self.output = Output(sections: sectionsSubject.asObservable(),
                              state: stateSubject.asDriver(onErrorJustReturn: .error))
 
@@ -55,6 +58,7 @@ private extension ShopListViewModel {
     func setup() {
         callWs()
         setupRefresh()
+        setupSelected()
     }
 
     func callWs() {
@@ -96,5 +100,13 @@ private extension ShopListViewModel {
             guard let self = self else { return }
             self.callWs()
         }).disposed(by: disposeBag)
+    }
+    
+    func setupSelected() {
+        selectedSubject
+            .map { signShop -> Step in
+                return AppStep.signShopDetail(signShop.getResponse())
+            }.bind(to: step)
+            .disposed(by: disposeBag)
     }
 }

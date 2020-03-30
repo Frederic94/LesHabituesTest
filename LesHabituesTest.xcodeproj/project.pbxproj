@@ -35,6 +35,8 @@
 		0550BEC722086CB500F1622E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0550BEC522086CB500F1622E /* Localizable.strings */; };
 		0550BEC922086F0700F1622E /* NumberFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0550BEC822086F0700F1622E /* NumberFormatter.swift */; };
 		90A72FA8B908DB0983C5EBEC /* Pods_LesHabituesTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97A87749D57F2A01BBDBE834 /* Pods_LesHabituesTest.framework */; };
+		A182290D2431E986005012AE /* SignShopDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A182290C2431E986005012AE /* SignShopDetailViewController.swift */; };
+		A182290F2431E999005012AE /* SignShopDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A182290E2431E999005012AE /* SignShopDetailViewModel.swift */; };
 		CB410CAD6059F0C14FBFCE86 /* Pods_LesHabituesTest_LesHabituesTestTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4E05F7A6956A97406E67C4D /* Pods_LesHabituesTest_LesHabituesTestTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -88,6 +90,8 @@
 		927B87D91960EF3E867370C1 /* Pods-LesHabituesTest-LesHabituesTestUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LesHabituesTest-LesHabituesTestUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LesHabituesTest-LesHabituesTestUITests/Pods-LesHabituesTest-LesHabituesTestUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		97A87749D57F2A01BBDBE834 /* Pods_LesHabituesTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LesHabituesTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FCE2A3DA596DBA54D3EDDEC /* Pods-LesHabituesTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LesHabituesTest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LesHabituesTest/Pods-LesHabituesTest.debug.xcconfig"; sourceTree = "<group>"; };
+		A182290C2431E986005012AE /* SignShopDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignShopDetailViewController.swift; sourceTree = "<group>"; };
+		A182290E2431E999005012AE /* SignShopDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignShopDetailViewModel.swift; sourceTree = "<group>"; };
 		C4E05F7A6956A97406E67C4D /* Pods_LesHabituesTest_LesHabituesTestTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LesHabituesTest_LesHabituesTestTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5CB96062F06C48C292C19C6 /* Pods-LesHabituesTest-LesHabituesTestTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LesHabituesTest-LesHabituesTestTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LesHabituesTest-LesHabituesTestTests/Pods-LesHabituesTest-LesHabituesTestTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -270,6 +274,7 @@
 		0550BEA522084A6300F1622E /* ShopList */ = {
 			isa = PBXGroup;
 			children = (
+				A182290B2431E95F005012AE /* SignShopDetail */,
 				0550BEA622084A7600F1622E /* ShopListViewModel.swift */,
 				0550BEA822084A8300F1622E /* ShopListViewController.swift */,
 				0550BEAC22084D7100F1622E /* ShopViewModel.swift */,
@@ -339,6 +344,15 @@
 				E5CB96062F06C48C292C19C6 /* Pods-LesHabituesTest-LesHabituesTestTests.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		A182290B2431E95F005012AE /* SignShopDetail */ = {
+			isa = PBXGroup;
+			children = (
+				A182290C2431E986005012AE /* SignShopDetailViewController.swift */,
+				A182290E2431E999005012AE /* SignShopDetailViewModel.swift */,
+			);
+			path = SignShopDetail;
 			sourceTree = "<group>";
 		};
 		EB7B0604FCEEF28B567A1DA5 /* Frameworks */ = {
@@ -583,6 +597,7 @@
 				052528412207263E00128C9C /* Shop.swift in Sources */,
 				0525284822072AD200128C9C /* APIConfig.swift in Sources */,
 				0550BEB42208509500F1622E /* Steps.swift in Sources */,
+				A182290F2431E999005012AE /* SignShopDetailViewModel.swift in Sources */,
 				0550BE912207554200F1622E /* ShopCell.swift in Sources */,
 				0550BEAD22084D7100F1622E /* ShopViewModel.swift in Sources */,
 				05252846220729D300128C9C /* ShopService.swift in Sources */,
@@ -594,6 +609,7 @@
 				0525284A22072B3100128C9C /* ShopDataController.swift in Sources */,
 				0550BEB122084F9100F1622E /* AppFlow.swift in Sources */,
 				0550BEB82208559400F1622E /* UIStoryboardExtensions.swift in Sources */,
+				A182290D2431E986005012AE /* SignShopDetailViewController.swift in Sources */,
 				0550BEAB22084AAC00F1622E /* ViewModelType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

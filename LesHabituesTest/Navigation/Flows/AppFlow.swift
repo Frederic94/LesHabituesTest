@@ -28,6 +28,8 @@ final class AppFlow: Flow {
         switch step {
         case .shopList:
             return navigateToShopList()
+        default:
+            return .none
         }
     }
 

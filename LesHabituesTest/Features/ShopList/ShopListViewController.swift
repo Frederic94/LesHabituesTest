@@ -51,6 +51,7 @@ private extension ShopListViewController {
     func setup() {
         setupDataSource()
         bindViewModel()
+        bindToViewModel()
     }
 
     func setupDataSource() {
@@ -106,6 +107,12 @@ private extension ShopListViewController {
                           buttons: [.default(buttonTitle)])
             }.map { _ in () }
             .bind(to: viewModel.input.refresh)
+            .disposed(by: disposeBag)
+    }
+    
+    func bindToViewModel() {
+        tableView.rx.modelSelected(SignShopModel.self)
+            .bind(to: viewModel.input.selected)
             .disposed(by: disposeBag)
     }
 }
