@@ -7,6 +7,11 @@ PODS:
   - Moya/RxSwift (11.0.2):
     - Moya/Core
     - RxSwift (~> 4.0)
+  - Realm (3.20.0):
+    - Realm/Headers (= 3.20.0)
+  - Realm/Headers (3.20.0)
+  - RealmSwift (3.20.0):
+    - Realm (= 3.20.0)
   - Result (3.2.4)
   - RxAlertController (4.0.0):
     - RxSwift (~> 4.3.1)
@@ -23,6 +28,9 @@ PODS:
   - RxFlow (1.6.2):
     - RxCocoa (>= 4.3.0)
     - RxSwift (>= 4.3.0)
+  - RxRealm (0.7.6):
+    - RealmSwift (~> 3.0)
+    - RxSwift (~> 4.0)
   - RxSwift (4.3.1)
   - RxTest (4.4.0):
     - RxAtomic (~> 4.4)
@@ -47,17 +55,19 @@ PODS:
 
 DEPENDENCIES:
   - Moya/RxSwift (~> 11.0.2)
+  - RealmSwift (~> 3.20.0)
   - RxAlertController (~> 4.0)
   - RxBlocking (~> 4.4.0)
   - RxCocoa (~> 4.3.1)
   - RxDataSources (~> 3.1.0)
   - RxFlow (~> 1.6.2)
+  - RxRealm (~> 0.7.6)
   - RxSwift (~> 4.3.1)
   - RxTest (~> 4.4.0)
   - SwifterSwift
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  https://github.com/CocoaPods/Specs.git:
     - Alamofire
     - Differentiator
     - Moya
@@ -71,11 +81,17 @@ SPEC REPOS:
     - RxSwift
     - RxTest
     - SwifterSwift
+  trunk:
+    - Realm
+    - RealmSwift
+    - RxRealm
 
 SPEC CHECKSUMS:
   Alamofire: 3ec537f71edc9804815215393ae2b1a8ea33a844
   Differentiator: be49ca3408f0ecfc761e4c7763d20c62be01b9ad
   Moya: a725035953bc1c0eb1be505ab903984501d82440
+  Realm: 8b2ca5bc6479a91f379b6b42b5922e396cd5ba5a
+  RealmSwift: 1949ef26a279e1845bd51d591b9103adfcd121df
   Result: d2d07204ce72856f1fd9130bbe42c35a7b0fea10
   RxAlertController: 3306c07f3d2f150b0b3d5d196669a6f34c6df552
   RxAtomic: eacf60db868c96bfd63320e28619fe29c179656f
@@ -83,10 +99,11 @@ SPEC CHECKSUMS:
   RxCocoa: 78763c7b07d02455598d9fc3c1ad091a28b73635
   RxDataSources: a843bad90c29817f5923ec8163f4af2de084ceb3
   RxFlow: 2460b8f1d546a7536d3b259536357301030a4140
+  RxRealm: 5379eddd74f8d617ca7681d1f8d144af25b432b0
   RxSwift: fe0fd770a43acdb7d0a53da411c9b892e69bb6e4
   RxTest: 19d03286bdc0a3aaea5d61d4cde31fdf4bb8a5ba
   SwifterSwift: 812ffec6f301922f5430e75be3f2939ea3a80024
 
-PODFILE CHECKSUM: 5c006e1c1705ab1fc43f2d48b7be6f6c37a6d5d2
+PODFILE CHECKSUM: 2940ded62eb22a9f2b2bfaafa1916092850e5f62
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.9.1

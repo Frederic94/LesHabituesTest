@@ -7,7 +7,7 @@ pod 'RxCocoa', '~> 4.3.1'
 pod 'RxDataSources', '~> 3.1.0'
 
 target 'LesHabituesTest' do
-    pod 'SwifterSwift' 
+    pod 'SwifterSwift'
 
     # navigation
     pod 'RxFlow', '~> 1.6.2'
@@ -15,6 +15,10 @@ target 'LesHabituesTest' do
 
     #Networking
     pod 'Moya/RxSwift', '~> 11.0.2'
+
+    #Database
+    pod 'RealmSwift', '~> 3.20.0'
+    pod 'RxRealm', '~> 0.7.6'
 
     target 'LesHabituesTestTests' do
         pod 'RxBlocking', '~> 4.4.0'
