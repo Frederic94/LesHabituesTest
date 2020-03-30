@@ -63,11 +63,11 @@ private extension ShopListViewController {
         })
     }
 
-    func cellShop(tableView: UITableView, indexPath: IndexPath, shop: ShopViewModel) -> UITableViewCell {
+    func cellShop(tableView: UITableView, indexPath: IndexPath, shop: SignShopModel) -> UITableViewCell {
         var shop = shop
         let cell = tableView.dequeueReusableCell(withClass: ShopCell.self, for: indexPath)
         cell.configure(logo: shop.logo, name: shop.name,
-                       adress: shop.address, offer: shop.maxOffer)
+                       category: shop.category)
         return cell
     }
 

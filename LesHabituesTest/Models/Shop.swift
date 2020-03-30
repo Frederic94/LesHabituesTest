@@ -8,47 +8,45 @@
 
 import Foundation
 
-public struct ShopListResponse: Decodable {
+public struct SignShopListResponse: Decodable {
     public var object: String
     public var total: Int
-    public var results: [Shop]
+    public var data: [SignShopResponse]
 }
 
-public struct Shop: Decodable {
-
+public struct SignShopResponse: Decodable {
     public var id: Int
-    public var shopId: Int
-    public var latitude: String
-    public var longitude: String
-    public var distance: String
-    public var name: String
     public var chain: String
-    public var address: String
-    public var zipcode: String
-    public var city: String
     public var categoryId: Int
     public var categoryName: String
     public var logo: String
-    public var cover: String
-    public var maxoffer: String
-    public var currency: String
+    public var localisations: [ShopResponse]
 
     enum CodingKeys: String, CodingKey {
         case id
-        case shopId = "shop_id"
-        case latitude
-        case longitude
-        case distance
-        case name
         case chain
-        case address
-        case zipcode
-        case city
         case categoryId = "category_id"
-        case categoryName = "category_name"
-        case logo
-        case cover
-        case maxoffer
-        case currency
+        case categoryName = "category"
+        case logo = "picture_url"
+        case localisations
+    }
+}
+
+public struct ShopResponse: Decodable {
+    public var id: Int
+    public var name: String
+    public var address: String
+    public var zipcode: String
+    public var city: String
+    public var geoloc: ShopGeolocResponse
+}
+
+public struct ShopGeolocResponse: Decodable {
+    public var latitude: Double
+    public var longitude: Double
+    
+    enum CodingKeys: String, CodingKey {
+        case latitude = "lat"
+        case longitude = "lng"
     }
 }

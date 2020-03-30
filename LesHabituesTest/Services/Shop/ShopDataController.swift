@@ -21,14 +21,14 @@ public final class ShopDataController {
         provider = Provider<ShopService>()
     }
 
-    public func getShops() -> Single<Result<ShopListResponse, ShopError>> {
+    public func getShops() -> Single<Result<SignShopListResponse, ShopError>> {
         let decoder = JSONDecoder()
         return provider
             .request(.list)
-            .map(ShopListResponse.self, atKeyPath: nil, using: decoder, failsOnEmptyData: true)
+            .map(SignShopListResponse.self, atKeyPath: nil, using: decoder, failsOnEmptyData: true)
             .map {response in
                 return Result.success(response)
-            }.catchError({ error -> PrimitiveSequence<SingleTrait, Result<ShopListResponse, ShopError>> in
+            }.catchError({ error -> PrimitiveSequence<SingleTrait, Result<SignShopListResponse, ShopError>> in
                 return Single.just(.failure(.failFetchingShops(error)))
             })
     }

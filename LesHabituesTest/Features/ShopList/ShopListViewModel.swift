@@ -13,7 +13,7 @@ import RxDataSources
 import RxFlow
 
 final class ShopListViewModel: ViewModelType, Stepper {
-    typealias ShopSectionModel = SectionModel<String, ShopViewModel>
+    typealias ShopSectionModel = SectionModel<String, SignShopModel>
 
     enum State {
         case loading
@@ -63,15 +63,16 @@ private extension ShopListViewModel {
                         .share()
 
         responseShare
-            .flatMap { result -> Single<[Shop]> in
+            .flatMap { result -> Single<[SignShopResponse]> in
                 switch result {
                 case .success(let response):
-                    return .just(response.results)
-                case .failure:
+                    return .just(response.data)
+                case .failure(let error):
+                    print(error)
                     return .never()
                 }
-            }.map { shops -> [ShopViewModel] in
-                shops.map { ShopViewModel(shop: $0) }
+            }.map { shops -> [SignShopModel] in
+                shops.map { SignShopModel(shop: $0) }
             }.map { vms -> [ShopSectionModel] in
                 return [ShopSectionModel(model: "", items: vms)]
             }.bind(to: sectionsSubject)

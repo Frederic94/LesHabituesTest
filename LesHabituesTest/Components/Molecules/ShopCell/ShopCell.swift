@@ -14,7 +14,7 @@ class ShopCell: UITableViewCell, Nibable {
     @IBOutlet weak var nameLabel: UILabel! {
         didSet {
             nameLabel.font = FontFamily.Lato.regular.font(size: 14.0)
-            nameLabel.textColor = UIColor.silver
+            nameLabel.textColor = UIColor.black
         }
     }
     @IBOutlet weak var adressLabel: UILabel! {
@@ -24,20 +24,13 @@ class ShopCell: UITableViewCell, Nibable {
             adressLabel.textColor = UIColor.silver
         }
     }
-
-    @IBOutlet weak var offerLabel: UILabel! {
-        didSet {
-            offerLabel.font = FontFamily.Lato.regular.font(size: 14.0)
-            offerLabel.textColor = UIColor.cornflowerBlue
-        }
-    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
 
-    public func configure(logo: URL?, name: String, adress: String, offer: String) {
+    public func configure(logo: URL?, name: String, category: String) {
         if let url = logo {
             logoImageView.download(from: url)
         } else {
@@ -45,8 +38,7 @@ class ShopCell: UITableViewCell, Nibable {
         }
 
         nameLabel.text = name
-        adressLabel.text = adress
-        offerLabel.text = offer
+        adressLabel.text = category
     }
     
 }
