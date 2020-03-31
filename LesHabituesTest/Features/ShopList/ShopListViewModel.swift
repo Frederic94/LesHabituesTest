@@ -63,14 +63,13 @@ private extension ShopListViewModel {
 
     func callWs() {
         let responseShare = dataController.getShops()
-                        .asObservable()
                         .share()
 
         responseShare
             .flatMap { result -> Single<[SignShopResponse]> in
                 switch result {
                 case .success(let response):
-                    return .just(response.data)
+                    return .just(response)
                 case .failure(let error):
                     print(error)
                     return .never()
@@ -105,7 +104,7 @@ private extension ShopListViewModel {
     func setupSelected() {
         selectedSubject
             .map { signShop -> Step in
-                return AppStep.signShopDetail(signShop.getResponse())
+                return AppStep.signShopDetail(signShop.getId())
             }.bind(to: step)
             .disposed(by: disposeBag)
     }

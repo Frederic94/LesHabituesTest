@@ -32,21 +32,35 @@ public struct SignShopResponse: Decodable {
     }
 }
 
+extension SignShopResponse {
+    func toDB() -> SignShopDB {
+        let signShopDB = SignShopDB()
+        signShopDB.id = self.id
+        signShopDB.chain = self.chain
+        signShopDB.categoryId = self.categoryId
+        signShopDB.categoryName = self.categoryName
+        signShopDB.logo = self.logo
+        signShopDB.localisations.append(objectsIn: self.localisations.map { $0.toDB() })
+        return signShopDB
+    }
+}
+
 public struct ShopResponse: Decodable {
     public var id: Int
     public var name: String
     public var address: String
     public var zipcode: String
     public var city: String
-    public var geoloc: ShopGeolocResponse
 }
 
-public struct ShopGeolocResponse: Decodable {
-    public var latitude: Double
-    public var longitude: Double
-    
-    enum CodingKeys: String, CodingKey {
-        case latitude = "lat"
-        case longitude = "lng"
+extension ShopResponse {
+    func toDB() -> ShopDB {
+        let shopDB = ShopDB()
+        shopDB.id = self.id
+        shopDB.name = self.name
+        shopDB.address = self.address
+        shopDB.zipcode = self.zipcode
+        shopDB.city = self.city
+        return shopDB
     }
 }

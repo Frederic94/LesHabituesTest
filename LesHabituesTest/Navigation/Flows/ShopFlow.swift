@@ -21,8 +21,8 @@ final class ShopFlow: Flow {
         switch step {
         case .shopList:
             return navigateToShopList()
-        case .signShopDetail(let signShop):
-            return navigateToShopDetail(signShop: signShop)
+        case .signShopDetail(let id):
+            return navigateToShopDetail(signShopId: id)
         }
     }
 
@@ -35,8 +35,9 @@ final class ShopFlow: Flow {
                                            nextStepper: root.viewModel))
     }
     
-    private func navigateToShopDetail(signShop: SignShopResponse) -> NextFlowItems {
-        let vm = SignShopDetailViewModel(signShop: signShop)
+    private func navigateToShopDetail(signShopId: Int) -> NextFlowItems {
+        let vm = SignShopDetailViewModel(dataController: ShopDataController(),
+                                         signShopId: signShopId)
         let root = SignShopDetailViewController.instantiate()
         root.viewModel = vm
         rootViewController.pushViewController(root, animated: true)

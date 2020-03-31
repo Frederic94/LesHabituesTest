@@ -28,8 +28,8 @@ struct SignShopModel {
         self.shop = shop
     }
     
-    func getResponse() -> SignShopResponse {
-        return shop
+    func getId() -> Int {
+        return shop.id
     }
 }
 

@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -37,6 +37,9 @@
 		90A72FA8B908DB0983C5EBEC /* Pods_LesHabituesTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97A87749D57F2A01BBDBE834 /* Pods_LesHabituesTest.framework */; };
 		A182290D2431E986005012AE /* SignShopDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A182290C2431E986005012AE /* SignShopDetailViewController.swift */; };
 		A182290F2431E999005012AE /* SignShopDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A182290E2431E999005012AE /* SignShopDetailViewModel.swift */; };
+		A182291324322C9E005012AE /* RealmDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A182291224322C9E005012AE /* RealmDatabase.swift */; };
+		A182291524322D14005012AE /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = A182291424322D14005012AE /* Database.swift */; };
+		A182291724322D64005012AE /* SignShopDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = A182291624322D64005012AE /* SignShopDB.swift */; };
 		CB410CAD6059F0C14FBFCE86 /* Pods_LesHabituesTest_LesHabituesTestTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4E05F7A6956A97406E67C4D /* Pods_LesHabituesTest_LesHabituesTestTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -92,6 +95,9 @@
 		9FCE2A3DA596DBA54D3EDDEC /* Pods-LesHabituesTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LesHabituesTest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LesHabituesTest/Pods-LesHabituesTest.debug.xcconfig"; sourceTree = "<group>"; };
 		A182290C2431E986005012AE /* SignShopDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignShopDetailViewController.swift; sourceTree = "<group>"; };
 		A182290E2431E999005012AE /* SignShopDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignShopDetailViewModel.swift; sourceTree = "<group>"; };
+		A182291224322C9E005012AE /* RealmDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmDatabase.swift; sourceTree = "<group>"; };
+		A182291424322D14005012AE /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
+		A182291624322D64005012AE /* SignShopDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignShopDB.swift; sourceTree = "<group>"; };
 		C4E05F7A6956A97406E67C4D /* Pods_LesHabituesTest_LesHabituesTestTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LesHabituesTest_LesHabituesTestTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5CB96062F06C48C292C19C6 /* Pods-LesHabituesTest-LesHabituesTestTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LesHabituesTest-LesHabituesTestTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LesHabituesTest-LesHabituesTestTests/Pods-LesHabituesTest-LesHabituesTestTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -139,6 +145,7 @@
 		0525281922071F5A00128C9C /* LesHabituesTest */ = {
 			isa = PBXGroup;
 			children = (
+				A182291024322C7D005012AE /* Database */,
 				0550BEAE22084F7E00F1622E /* Navigation */,
 				0550BE98220758A200F1622E /* Helpers */,
 				0525283D2207230600128C9C /* Services */,
@@ -355,6 +362,24 @@
 			path = SignShopDetail;
 			sourceTree = "<group>";
 		};
+		A182291024322C7D005012AE /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				A182291124322C93005012AE /* Realm */,
+				A182291624322D64005012AE /* SignShopDB.swift */,
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
+		A182291124322C93005012AE /* Realm */ = {
+			isa = PBXGroup;
+			children = (
+				A182291224322C9E005012AE /* RealmDatabase.swift */,
+				A182291424322D14005012AE /* Database.swift */,
+			);
+			path = Realm;
+			sourceTree = "<group>";
+		};
 		EB7B0604FCEEF28B567A1DA5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -550,6 +575,7 @@
 				0550BE9C22076F2600F1622E /* Colors.swift in Sources */,
 				0550BEA722084A7600F1622E /* ShopListViewModel.swift in Sources */,
 				0550BEC922086F0700F1622E /* NumberFormatter.swift in Sources */,
+				A182291724322D64005012AE /* SignShopDB.swift in Sources */,
 				052528412207263E00128C9C /* Shop.swift in Sources */,
 				0525284822072AD200128C9C /* APIConfig.swift in Sources */,
 				0550BEB42208509500F1622E /* Steps.swift in Sources */,
@@ -564,9 +590,11 @@
 				0550BEBC220869B300F1622E /* Nibable.swift in Sources */,
 				0525284A22072B3100128C9C /* ShopDataController.swift in Sources */,
 				0550BEB122084F9100F1622E /* AppFlow.swift in Sources */,
+				A182291324322C9E005012AE /* RealmDatabase.swift in Sources */,
 				0550BEB82208559400F1622E /* UIStoryboardExtensions.swift in Sources */,
 				A182290D2431E986005012AE /* SignShopDetailViewController.swift in Sources */,
 				0550BEAB22084AAC00F1622E /* ViewModelType.swift in Sources */,
+				A182291524322D14005012AE /* Database.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

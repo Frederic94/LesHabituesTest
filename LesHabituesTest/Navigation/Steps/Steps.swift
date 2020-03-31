@@ -11,5 +11,5 @@ import RxFlow
 
 indirect enum AppStep: Step {
     case shopList
-    case signShopDetail(SignShopResponse)
+    case signShopDetail(Int)
 }
